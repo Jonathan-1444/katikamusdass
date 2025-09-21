@@ -1,1 +1,348 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katikamu SDA Secondary School - Home</title>
+    <meta name="description" content="Katikamu SDA Secondary School - Excellence in Education with Christian Values since 1968">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-overlay {
+            background: rgba(0, 30, 71, 0.7);
+        }
+        .counter-item {
+            transition: all 0.5s ease;
+        }
+        .counter-item:hover {
+            transform: translateY(-5px);
+        }
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 15px rgba(210, 170, 50, 0.7);
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Announcement Bar -->
+    <div class="bg-blue-900 text-white text-center py-2 px-4">
+        <p class="text-sm md:text-base">🎓 Admissions Open for 2026! <a href="#" class="font-semibold underline ml-2">Apply Now</a></p>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwlP3Fb5Z1i1Cc6SBcshJH4SEo1VrbwJlLIQ&s" alt="Katikamu SDA Logo" class="h-12 mr-3">
+                <h1 class="text-xl md:text-2xl font-bold text-blue-900">Katikamu SDA <span class="text-yellow-600">Secondary</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-blue-900 font-medium hover:text-yellow-600 transition relative group">Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="aboutus.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">About Us
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="academics.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Academics
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="facilities.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Facilities
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="studentlife.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Student Life
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="news.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">News & Events
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="contact.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Contact
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+            
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i data-feather="menu" class="text-blue-900"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-4 px-4 shadow-lg" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-blue-900 font-medium">Home</a>
+                <a href="about.html" class="text-gray-700 font-medium">About Us</a>
+                <a href="academics.html" class="text-gray-700 font-medium">Academics</a>
+                <a href="facilities.html" class="text-gray-700 font-medium">Facilities</a>
+                <a href="studentlife.html" class="text-gray-700 font-medium">Student Life</a>
+                <a href="news.html" class="text-gray-700 font-medium">News & Events</a>
+                <a href="contact.html" class="text-gray-700 font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center bg-blue-900 overflow-hidden">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="absolute inset-0 bg-[url('https://www.katikamusdass.ac.ug/wp-content/uploads/2015/10/DSC_9037-1500x630.jpg')] bg-cover bg-center opacity-30"></div>
+        
+        <div class="container mx-auto px-4 z-10 text-center" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                <span class="block">Katikamu SDA</span>
+                <span class="text-yellow-400">Secondary School</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                "Fear God and Strive" - Excellence in Education Since 1968
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="400">
+                <a href="#" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 btn-glow pulse">
+                    Apply Now
+                </a>
+                <a href="about.html" class="bg-transparent hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-6 border-2 border-white rounded-full transition duration-300">
+                    Learn More
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center">
+            <a href="#quick-stats" class="text-white animate-bounce">
+                <i data-feather="chevron-down" class="w-8 h-8"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Quick Stats Section -->
+    <section id="quick-stats" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="counter-item bg-blue-50 p-8 rounded-lg text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl font-bold text-blue-900 mb-2" id="student-counter">0</div>
+                    <h3 class="text-xl font-semibold text-gray-800">Students</h3>
+                    <p class="text-gray-600 mt-2">Thriving in our learning community</p>
+                </div>
+                
+                <div class="counter-item bg-blue-50 p-8 rounded-lg text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl font-bold text-blue-900 mb-2" id="year-counter">1968</div>
+                    <h3 class="text-xl font-semibold text-gray-800">Established</h3>
+                    <p class="text-gray-600 mt-2">Over 50 years of excellence</p>
+                </div>
+                
+                <div class="counter-item bg-blue-50 p-8 rounded-lg text-center" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-4xl font-bold text-blue-900 mb-2">U/0185</div>
+                    <h3 class="text-xl font-semibold text-gray-800">UNEB Centre</h3>
+                    <p class="text-gray-600 mt-2">Recognized examination center</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-12" data-aos="fade-up">Our Guiding Principles</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="mission-card bg-white p-8 rounded-lg shadow-md transition duration-300" data-aos="fade-right">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                            <i data-feather="target" class="text-yellow-600 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900">Our Mission</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        To provide quality Christian education that develops students spiritually, intellectually, physically, and socially, equipping them with skills and values for responsible citizenship and service to God and humanity.
+                    </p>
+                </div>
+                
+                <div class="mission-card bg-white p-8 rounded-lg shadow-md transition duration-300" data-aos="fade-left">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i data-feather="eye" class="text-blue-600 w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900">Our Vision</h3>
+                    </div>
+                    <p class="text-gray-700">
+                        To be a center of excellence in holistic education, producing well-rounded individuals who excel academically, demonstrate strong moral character, and contribute positively to society.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 bg-blue-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="fade-up">Ready to Join Our Community?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Discover how Katikamu SDA Secondary School can help your child achieve their full potential.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="#" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 btn-glow">
+                    Apply Now
+                </a>
+                <a href="contact.html" class="bg-transparent hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 border-2 border-white rounded-full transition duration-300">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-400">Katikamu SDA</h3>
+                    <p class="mb-4">Providing quality Christian education since 1968.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-feather="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="academics.html" class="text-gray-400 hover:text-white transition">Academics</a></li>
+                        <li><a href="facilities.html" class="text-gray-400 hover:text-white transition">Facilities</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Admissions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">School Calendar</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Downloads</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-white transition">News & Events</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="mr-2 mt-1 w-4 h-4"></i>
+                            <span>P.O. Box 123, Wobulenzi, Uganda</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="mr-2 w-4 h-4"></i>
+                            <span>+256 123 456 789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="mr-2 w-4 h-4"></i>
+                            <span>info@katikamussd.edu.ug</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Katikamu SDA Secondary School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-900 text-white p-3 rounded-full shadow-lg hidden">
+        <i data-feather="arrow-up"></i>
+    </button>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            duration: 800,
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Counter animation
+        function animateCounter(id, start, end, duration) {
+            let startTimestamp = null;
+            const element = document.getElementById(id);
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                element.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Start counters when scrolled to
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter('student-counter', 0, 2000, 1500);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {threshold: 0.5});
+
+        observer.observe(document.getElementById('quick-stats'));
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        // Feather icons
+        feather.replace();
+    </script>
+</body>
+</html>

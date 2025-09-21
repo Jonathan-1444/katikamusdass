@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academics - Katikamu SDA Secondary School</title>
+    <meta name="description" content="Explore our academic programs at Katikamu SDA Secondary School including O-Level, A-Level, and vocational courses">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .tab-button.active {
+            background-color: #1e40af;
+            color: white;
+        }
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .subject-card:hover .subject-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+        .subject-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion.active .accordion-content {
+            max-height: 1000px;
+            transition: max-height 0.5s ease-in;
+        }
+        .accordion.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Announcement Bar -->
+    <div class="bg-blue-900 text-white text-center py-2 px-4">
+        <p class="text-sm md:text-base">🎓 Admissions Open for 2026! <a href="#" class="font-semibold underline ml-2">Apply Now</a></p>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwlP3Fb5Z1i1Cc6SBcshJH4SEo1VrbwJlLIQ&s" alt="Katikamu SDA Logo" class="h-12 mr-3">
+                <h1 class="text-xl md:text-2xl font-bold text-blue-900">Katikamu SDA <span class="text-yellow-600">Secondary</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="about.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">About Us
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="academics.html" class="text-blue-900 font-medium hover:text-yellow-600 transition relative group">Academics
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="facilities.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Facilities
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="studentlife.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Student Life
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="news.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">News & Events
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="contact.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Contact
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+            
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i data-feather="menu" class="text-blue-900"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-4 px-4 shadow-lg" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-700 font-medium">Home</a>
+                <a href="about.html" class="text-gray-700 font-medium">About Us</a>
+                <a href="academics.html" class="text-blue-900 font-medium">Academics</a>
+                <a href="facilities.html" class="text-gray-700 font-medium">Facilities</a>
+                <a href="studentlife.html" class="text-gray-700 font-medium">Student Life</a>
+                <a href="news.html" class="text-gray-700 font-medium">News & Events</a>
+                <a href="contact.html" class="text-gray-700 font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="relative py-20 bg-blue-900">
+        <div class="absolute inset-0 bg-[url('https://www.instagram.com/katikamusdass.ac.ug/p/CeQJfJbDVp1/')] bg-cover bg-center opacity-20"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-aos="fade-up">Academic Programs</h1>
+            <p class="text-xl text-white max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Excellence in education with a Christian foundation
+            </p>
+        </div>
+    </section>
+
+    <!-- Programs Tabs -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center mb-8" data-aos="fade-up">
+                <button class="tab-button active px-6 py-3 rounded-t-lg font-semibold transition" data-tab="olevel">O-Level</button>
+                <button class="tab-button px-6 py-3 rounded-t-lg font-semibold transition" data-tab="alevel">A-Level</button>
+                <button class="tab-button px-6 py-3 rounded-t-lg font-semibold transition" data-tab="vocational">Vocational</button>
+            </div>
+            
+            <!-- O-Level Content -->
+            <div id="olevel-content" class="tab-content active">
+                <div class="bg-blue-50 rounded-lg p-8 mb-12" data-aos="fade-up">
+                    <h2 class="text-2xl font-bold text-blue-900 mb-4">Ordinary Level (S1-S4)</h2>
+                    <p class="text-gray-700 mb-6">
+                        Our O-Level program follows the Uganda National Examinations Board (UNEB) curriculum, preparing students for the Uganda Certificate of Education (UCE) examinations. We offer a comprehensive education that balances academic rigor with spiritual and character development.
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-blue-900 mb-4">Core Subjects</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="subject-card bg-white p-6 rounded-lg shadow-sm transition duration-300" data-aos="fade-up">
+                                <div class="bg-blue-100 p-3 rounded-full inline-flex mb-4 subject-icon">
+                                    <i data-feather="book" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-2">English Language</h4>
+                                <p class="text-gray-700 text-sm">
+                                    Developing reading, writing, listening and speaking skills for effective communication.
+                                </p>
+                            </div>
+                            
+                            <div class="subject-card bg-white p-6 rounded-lg shadow-sm transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                                <div class="bg-blue-100 p-3 rounded-full inline-flex mb-4 subject-icon">
+                                    <i data-feather="divide" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-2">Mathematics</h4>
+                                <p class="text-gray-700 text-sm">
+                                    Building strong foundations in algebra, geometry, statistics and problem-solving.
+                                </p>
+                            </div>
+                            
+                            <div class="subject-card bg-white p-6 rounded-lg shadow-sm transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                                <div class="bg-blue-100 p-3 rounded-full inline-flex mb-4 subject-icon">
+                                    <i data-feather="globe" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-2">Geography</h4>
+                                <p class="text-gray-700 text-sm">
+                                    Exploring physical and human geography with field trips and practical studies.
+                                </p>
+                            </div>
+                            
+                            <div class="subject-card bg-white p-6 rounded-lg shadow-sm transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                                <div class="bg-blue-100 p-3 rounded-full inline-flex mb-4 subject-icon">
+                                    <i data-feather="flask" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-2">Physics</h4>
+                                <p class="text-gray-700 text-sm">
+                                    Hands-on experiments and theoretical understanding of physical principles.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-blue-900 mb-4">Elective Subjects</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="subject-card bg-white p-6 rounded-lg shadow-sm transition duration-300" data-aos="fade-up">
+                                <div class="bg-blue-100 p-3 rounded-full inline-flex mb-4 subject-icon">
+                                    <i data-feather="dna" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-2">Biology</h4>
+                                <p class="text-gray-700 text-sm">
+                                    Study of living organisms with practical laboratory sessions and field studies.
+                                </p>
+                            </div>
+                            
+                            <div class="subject-card bg-white p-6 rounded-lg shadow-sm transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                                <div class="bg-blue-100 p-3 rounded-full inline-flex mb-4 subject-icon">
+                                    <i data-feather="activity" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-2">Chemistry</h4>
+                                <p class="text-gray-700 text-sm">
+                                    Understanding matter and its transformations through experiments and theory.
+                                </p>
+                            </div>
+                            
+                            <div class="subject-card bg-white p-6 rounded-lg shadow-sm transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                                <div class="bg-blue-100 p-3 rounded-full inline-flex mb-4 subject-icon">
+                                    <i data-feather="book-open" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-2">History</h4>
+                                <p class="text-gray-700 text-sm">
+                                    Exploring Uganda's and world history with critical analysis of events.
+                                </p>
+                            </div>
+                            
+                            <div class="subject-card bg-white p-6 rounded-lg shadow-sm transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                                <div class="bg-blue-100 p-3 rounded-full inline-flex mb-4 subject-icon">
+                                    <i data-feather="dollar-sign" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-2">Commerce</h4>
+                                <p class="text-gray-700 text-sm">
+                                    Introduction to business concepts, trade, and financial literacy.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow-sm" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-blue-900 mb-4">Admission Requirements</h3>
+                        <div class="space-y-4">
+                            <div class="accordion border-b border-gray-200 pb-4">
+                                <button class="accordion-button w-full flex justify-between items-center text-left font-medium text-blue-900">
+                                    <span>Primary Leaving Examination (PLE) Results</span>
+                                    <i data-feather="chevron-down" class="accordion-icon w-5 h-5"></i>
+                                </button>
+                                <div class="accordion-content mt-2 text-gray-700">
+                                    <p>Minimum aggregate score of 12 in PLE with at least a pass in English and Mathematics.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion border-b border-gray-200 pb-4">
+                                <button class="accordion-button w-full flex justify-between items-center text-left font-medium text-blue-900">
+                                    <span>Age Requirement</span>
+                                    <i data-feather="chevron-down" class="accordion-icon w-5 h-5"></i>
+                                </button>
+                                <div class="accordion-content mt-2 text-gray-700">
+                                    <p>Students should be between 12-14 years old at the time of admission to S1.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion border-b border-gray-200 pb-4">
+                                <button class="accordion-button w-full flex justify-between items-center text-left font-medium text-blue-900">
+                                    <span>Interview</span>
+                                    <i data-feather="chevron-down" class="accordion-icon w-5 h-5"></i>
+                                </button>
+                                <div class="accordion-content mt-2 text-gray-700">
+                                    <p>All prospective students and parents/guardians must attend an admission interview.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- A-Level Content -->
+            <div id="alevel-content" class="tab-content hidden">
+                <div class="bg-blue-50 rounded-lg p-8 mb-12" data-aos="fade-up">
+                    <h2 class="text-2xl font-bold text-blue-900 mb-4">Advanced Level (S5-S6)</h2>
+                    <p class="text-gray-700 mb-6">
+                        Our A-Level program prepares students for the Uganda Advanced Certificate of Education (UACE) examinations. Students specialize in one of three combinations, receiving in-depth knowledge and skills for university education and beyond.
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-blue-900 mb-4">Combinations Offered</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="subject-card bg-white p-6 rounded-lg shadow-sm transition duration-300" data-aos="fade-up">
+                                <div class="bg-blue-100 p-3 rounded-full inline-flex mb-4 subject-icon">
+                                    <i data-feather="atom" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-2">Science (PCM/B)</h4>
+                                <p class="text-gray-700 text-sm mb-3">
+                                    Physics, Chemistry, Mathematics/Biology
+                                </p>
+                                <p class="text-gray-600 text-xs">
+                                    Prepares students for careers in medicine, engineering, technology, and pure sciences.
+                                </p>
+                            </div>
+                            
+                            <div class="subject-card bg-white p-6 rounded-lg shadow-sm transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                                <div class="bg-blue-100 p-3 rounded-full inline-flex mb-4 subject-icon">
+                                    <i data-feather="briefcase" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-2">Arts (HED/G)</h4>
+                                <p class="text-gray-700 text-sm mb-3">
+                                    History, Economics, Divinity/Geography
+                                </p>
+                                <p class="text-gray-600 text-xs">
+                                    Ideal for students interested in law, arts, social sciences, and religious studies.
+                                </p>
+                            </div>
+                            
+                            <div class="subject-card bg-white p-6 rounded-lg shadow-sm transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                                <div class="bg-blue-100 p-3 rounded-full inline-flex mb-4 subject-icon">
+                                    <i data-feather="dollar-sign" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-2">Commerce (BAM/ICT)</h4>
+                                <p class="text-gray-700 text-sm mb-3">
+                                    Business, Accounts, Mathematics/ICT
+                                </p>
+                                <p class="text-gray-600 text-xs">
+                                    Prepares students for careers in business, finance, accounting, and management.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow-sm" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-blue-900 mb-4">Admission Requirements</h3>
+                        <div class="space-y-4">
+                            <div class="accordion border-b border-gray-200 pb-4">
+                                <button class="accordion-button w-full flex justify-between items-center text-left font-medium text-blue-900">
+                                    <span>UCE Results</span>
+                                    <i data-feather="chevron-down" class="accordion-icon w-5 h-5"></i>
+                                </button>
+                                <div class="accordion-content mt-2 text-gray-700">
+                                    <p>Minimum of 8 credits including English and Mathematics for Science and Commerce combinations. 6 credits for Arts combination.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion border-b border-gray-200 pb-4">
+                                <button class="accordion-button w-full flex justify-between items-center text-left font-medium text-blue-900">
+                                    <span>Subject Requirements</span>
+                                    <i data-feather="chevron-down" class="accordion-icon w-5 h-5"></i>
+                                </button>
+                                <div class="accordion-content mt-2 text-gray-700">
+                                    <p>Science combination requires credit passes in Physics, Chemistry and Biology/Mathematics at O-Level. Commerce requires credits in Mathematics and English.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion border-b border-gray-200 pb-4">
+                                <button class="accordion-button w-full flex justify-between items-center text-left font-medium text-blue-900">
+                                    <span>Interview & Placement Test</span>
+                                    <i data-feather="chevron-down" class="accordion-icon w-5 h-5"></i>
+                                </button>
+                                <div class="accordion-content mt-2 text-gray-700">
+                                    <p>All prospective A-Level students must pass an interview and placement test in their chosen subject combination.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vocational Content -->
+            <div id="vocational-content" class="tab-content hidden">
+                <div class="bg-blue-50 rounded-lg p-8 mb-12" data-aos="fade-up">
+                    <h2 class="text-2xl font-bold text-blue-900 mb-4">Vocational Programs</h2>
+                    <p class="text-gray-700 mb-6">
+                        Our vocational programs provide practical skills training alongside academic education, preparing students for both employment and further technical education.
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold text-blue-900 mb-4">Programs Offered</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="subject-card bg-white p-6 rounded-lg shadow-sm transition duration-300" data-aos="fade-up">
+                                <div class="bg-blue-100 p-3 rounded-full inline-flex mb-4 subject-icon">
+                                    <i data-feather="cpu" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-2">Computer Studies</h4>
+                                <p class="text-gray-700 text-sm mb-3">
+                                    Hardware, software, networking and programming
+                                </p>
+                                <p class="text-gray-600 text-xs">
+                                    Prepares students for careers in IT support, software development, and digital entrepreneurship.
+                                </p>
+                            </div>
+                            
+                            <div class="subject-card bg-white p-6 rounded-lg shadow-sm transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                                <div class="bg-blue-100 p-3 rounded-full inline-flex mb-4 subject-icon">
+                                    <i data-feather="tool" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-2">Building & Construction</h4>
+                                <p class="text-gray-700 text-sm mb-3">
+                                    Carpentry, masonry, plumbing and electrical
+                                </p>
+                                <p class="text-gray-600 text-xs">
+                                    Hands-on training in construction skills for the growing building industry.
+                                </p>
+                            </div>
+                            
+                            <div class="subject-card bg-white p-6 rounded-lg shadow-sm transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                                <div class="bg-blue-100 p-3 rounded-full inline-flex mb-4 subject-icon">
+                                    <i data-feather="scissors" class="text-blue-600 w-6 h-6"></i>
+                                </div>
+                                <h4 class="text-lg font-bold text-blue-900 mb-2">Tailoring & Fashion</h4>
+                                <p class="text-gray-700 text-sm mb-3">
+                                    Garment construction, design and entrepreneurship
+                                </p>
+                                <p class="text-gray-600 text-xs">
+                                    Develops skills in clothing production and fashion business management.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-6 shadow-sm" data-aos="fade-up">
+                        <h3 class="text-xl font-semibold text-blue-900 mb-4">Admission Requirements</h3>
+                        <div class="space-y-4">
+                            <div class="accordion border-b border-gray-200 pb-4">
+                                <button class="accordion-button w-full flex justify-between items-center text-left font-medium text-blue-900">
+                                    <span>Minimum Education</span>
+                                    <i data-feather="chevron-down" class="accordion-icon w-5 h-5"></i>
+                                </button>
+                                <div class="accordion-content mt-2 text-gray-700">
+                                    <p>Completed S4 with at least 4 passes in UCE or equivalent qualification.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="accordion border-b border-gray-200 pb-4">
+                                <button class="accordion-button w-full flex justify-between items-center text-left font-medium text-blue-900">
+                                    <span>Age Requirement</span>
+                                    <
+</body>
+</html>
