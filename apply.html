@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Application & Admissions - Katikamu SDA Secondary School</title>
+    <meta name="description" content="Apply online for admission to Katikamu SDA Secondary School.">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+        .form-section { background: #f1f5f9; border-radius: 1rem; box-shadow: 0 4px 24px -8px rgba(30,64,175,0.08); }
+        .form-label { font-weight: 600; color: #1e40af; }
+        .form-input, .form-select, .form-textarea { border-radius: 0.5rem; border: 1px solid #d1d5db; padding: 0.75rem; width: 100%; margin-bottom: 1rem; }
+        .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: #1e40af; box-shadow: 0 0 0 2px #1e40af33; }
+        .form-file { margin-bottom: 1rem; }
+        .form-btn { background: #f59e0b; color: #fff; font-weight: 700; border-radius: 9999px; padding: 0.75rem 2rem; transition: background 0.2s; }
+        .form-btn:hover { background: #d97706; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Announcement Bar -->
+    <div class="bg-blue-900 text-white text-center py-2 px-4">
+        <p class="text-sm md:text-base">📝 Apply Online for Admission to Katikamu SDA SS!</p>
+    </div>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwlP3Fb5Z1i1Cc6SBcshJH4SEo1VrbwJlLIQ&s" alt="Katikamu SDA Logo" class="h-12 mr-3">
+                <h1 class="text-xl md:text-2xl font-bold text-blue-900">Katikamu SDA <span class="text-yellow-600">Secondary</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Home</a>
+                <a href="aboutus.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">About Us</a>
+                <a href="academics.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Academics</a>
+                <a href="fees.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Fees</a>
+                <a href="giants.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Academic Giants</a>
+                <a href="apply.html" class="text-blue-900 font-medium hover:text-yellow-600 transition relative group">Apply</a>
+                <a href="facilities.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Facilities</a>
+                <a href="studentlife.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Student Life</a>
+                <a href="news.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">News & Events</a>
+                <a href="contact.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Contact</a>
+            </nav>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i data-feather="menu" class="text-blue-900"></i>
+            </button>
+        </div>
+        <div class="md:hidden hidden bg-white w-full py-4 px-4 shadow-lg" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-700 font-medium">Home</a>
+                <a href="aboutus.html" class="text-gray-700 font-medium">About Us</a>
+                <a href="academics.html" class="text-gray-700 font-medium">Academics</a>
+                <a href="fees.html" class="text-gray-700 font-medium">Fees</a>
+                <a href="giants.html" class="text-gray-700 font-medium">Academic Giants</a>
+                <a href="apply.html" class="text-blue-900 font-medium">Apply</a>
+                <a href="facilities.html" class="text-gray-700 font-medium">Facilities</a>
+                <a href="studentlife.html" class="text-gray-700 font-medium">Student Life</a>
+                <a href="news.html" class="text-gray-700 font-medium">News & Events</a>
+                <a href="contact.html" class="text-gray-700 font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+    <!-- Hero Section -->
+    <section class="relative py-16 bg-blue-900">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4" data-aos="fade-up">Online Application & Admissions</h1>
+            <p class="text-xl text-white/90 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Start your journey at Katikamu SDA SS by applying online below.
+            </p>
+        </div>
+    </section>
+    <!-- Application Form -->
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <form class="form-section p-8 mx-auto max-w-3xl" enctype="multipart/form-data">
+                <h2 class="text-2xl font-bold text-blue-900 mb-6">A. Personal Data</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="form-label">First Name *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Last Name *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="form-label">Gender *</label>
+                        <select class="form-select" required>
+                            <option value="">Select</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label">Date of Birth *</label>
+                        <input type="date" class="form-input" required>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="form-label">Your Class *</label>
+                        <select class="form-select" required>
+                            <option value="">Select</option>
+                            <option>S1</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label">Nationality *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label">Religion *</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <h2 class="text-2xl font-bold text-blue-900 mb-6 mt-8">B. PLE Results</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="form-label">Former Primary School *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Index Number *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="form-label">Year you sat for PLE *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div>
+                        <label class="form-label">PLE Scores (Aggregates & Division) *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label">Have you attended any other secondary school before? *</label>
+                    <select class="form-select" required>
+                        <option value="">Select</option>
+                        <option>YES</option>
+                        <option>NO</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="form-label">Which academic level are you applying for? *</label>
+                    <select class="form-select" required>
+                        <option value="">Select</option>
+                        <option>O LEVEL</option>
+                        <option>A LEVEL</option>
+                    </select>
+                </div>
+                <h2 class="text-2xl font-bold text-blue-900 mb-6 mt-8">C. Parent Information</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="form-label">Father's Name *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Father's Occupation *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="form-label">Father's Place of Work *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Mother's Name *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="form-label">Mother's Occupation *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                    <div>
+                        <label class="form-label">Mother's Place of Work *</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="form-label">Parents' Telephone Contacts *</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div>
+                    <label class="form-label">Name of person/Organization that pays your fees. *</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div>
+                    <label class="form-label">Has any of your Siblings been a student Katikamu SDA SS?</label>
+                    <input type="text" class="form-input" placeholder="If yes, mention their names">
+                </div>
+                <h2 class="text-2xl font-bold text-blue-900 mb-6 mt-8">D. Co-Curricular Activities</h2>
+                <div>
+                    <label class="form-label">Indicate the co-curricular activities you participated in *</label>
+                    <input type="text" class="form-input" required>
+                </div>
+                <div>
+                    <label class="form-label">Attach PLE/UCE/any other relevant documents (Pictures or Documents) *</label>
+                    <input type="file" class="form-file" multiple accept="image/*,.pdf,.doc,.docx">
+                    <small class="text-gray-500">You can upload up to 5 files.</small>
+                </div>
+                <div class="mt-6 mb-4">
+                    <label class="form-label flex items-center">
+                        <input type="checkbox" required class="mr-2"> Declaration: I confirm the information given is correct to the best of my knowledge.
+                    </label>
+                </div>
+                <button type="submit" class="form-btn w-full text-lg">Submit Application</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-400">Katikamu SDA</h3>
+                    <p class="mb-4">Providing quality Christian education since 1968.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i data-feather="instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="academics.html" class="text-gray-400 hover:text-white transition">Academics</a></li>
+                        <li><a href="fees.html" class="text-gray-400 hover:text-white transition">Fees Structure</a></li>
+                        <li><a href="giants.html" class="text-gray-400 hover:text-white transition">Academic Giants</a></li>
+                        <li><a href="apply.html" class="text-gray-400 hover:text-white transition">Apply</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center"><i data-feather="map-pin" class="w-4 h-4 mr-2"></i><span>P.O.Box 53, Wobulenzi, Uganda</span></li>
+                        <li class="flex items-center"><i data-feather="phone" class="w-4 h-4 mr-2"></i><span>+256 772 481700</span></li>
+                        <li class="flex items-center"><i data-feather="mail" class="w-4 h-4 mr-2"></i><span>info@katikamusdass.ac.ug</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Academic News</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Student Life</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Events</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Announcements</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 Katikamu SDA Secondary School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        AOS.init({ once: true, duration: 800 });
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        feather.replace();
+    </script>
+</body>
+</html>
