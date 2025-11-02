@@ -1,267 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact Us — Katikamu SDA SS</title>
-  <link rel="icon" href="images/katisco.jpg" type="image/jpeg" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --blue-900:#08324a;
-      --accent:#06b6b4;
-      --light:#eef9ff;
-      --muted:#6b7280;
-      --card-bg: #ffffff;
-    }
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:"Inter",system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      background: linear-gradient(180deg,#e9f8ff 0%, #f7fbff 100%);
-      color:var(--blue-900);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Katikamu SDA Secondary School</title>
+    <meta name="description" content="Contact Katikamu SDA Secondary School - Get in touch with us for inquiries, admissions, and more.">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
 
-    /* Header (copied / consistent with index.html style) */
-    header.sticky{
-      position:sticky; top:0; z-index:60;
-      background:#fff; box-shadow:0 6px 18px rgba(2,6,23,0.04);
-      transition:all .28s ease;
-      border-bottom: 1px solid rgba(11,33,64,0.04);
-    }
-    .header-inner{max-width:1200px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:52px;width:52px;border-radius:8px;object-fit:cover;box-shadow:0 6px 18px rgba(11,96,160,0.06);transition:transform .2s ease}
-    .brand img:hover{transform:translateY(-3px) scale(1.03)}
-    .brand h1{margin:0;font-family:"Poppins",sans-serif;font-size:1.06rem;color:var(--blue-900);font-weight:700}
-    nav.main{display:flex;gap:18px;align-items:center}
-    nav.main a{position:relative;padding:8px 6px;color:var(--blue-900);text-decoration:none;font-weight:600;border-radius:6px;transition:all .18s}
-    nav.main a:hover{color:#fff;background:linear-gradient(90deg,var(--accent),#7dd3fc);transform:translateY(-3px)}
-    nav.main a .underline{position:absolute;left:0;bottom:6px;height:3px;width:0;background:#f59e0b;border-radius:2px;transition:width .28s}
-    nav.main a:hover .underline{width:100%}
-    #menu-toggle{display:none;background:transparent;border:0;padding:6px;cursor:pointer}
-
-    /* Hero with background children image */
-    .hero{
-      position:relative;height:46vh;min-height:260px;display:flex;align-items:center;justify-content:center;
-      overflow:hidden;
-    }
-    .hero::before{
-      content:"";
-      position:absolute;inset:0;
-      /* New online background: students / campus (random image from Unsplash) */
-      background-image: url('https://source.unsplash.com/1600x900/?students,campus,smile');
-      background-size:cover;background-position:center;
-      filter:contrast(0.95) saturate(0.9) blur(0.8px);
-      transform:scale(1.03);
-      opacity:0.65;
-    }
-    .hero::after{
-      content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,30,71,0.6), rgba(6,118,129,0.08));
-    }
-    .hero-inner{position:relative;z-index:3;text-align:center;color:#fff;padding:32px;max-width:980px}
-    .hero h2{margin:0;font-size:2rem;font-weight:700;letter-spacing:-0.4px}
-    .hero p{margin:.6rem 0 0;color:rgba(255,255,255,0.92);max-width:760px}
-
-    /* Contact area */
-    .wrap{max-width:1100px;margin:32px auto;padding:0 18px}
-    .grid{display:flex;gap:28px;align-items:flex-start;flex-wrap:wrap}
-    .col{flex:1 1 420px;min-width:300px;background:var(--card-bg);border-radius:12px;padding:22px;box-shadow:0 12px 30px rgba(2,6,23,0.06);border:1px solid rgba(11,33,64,0.04);backdrop-filter: blur(4px);transition:transform .28s}
-    .col:hover{transform:translateY(-6px)}
-    .left h3,.right h3{margin:0 0 10px;font-size:1.2rem}
-    .muted{color:var(--muted);line-height:1.5}
-    .meta-list{list-style:none;padding:0;margin:8px 0 0}
-    .meta-list li{margin:8px 0;font-weight:600;color:var(--blue-900)}
-    .meta-list a{color:var(--accent);text-decoration:none}
-    .chip{display:inline-block;padding:6px 10px;background:rgba(6,182,180,0.08);color:var(--accent);border-radius:999px;font-weight:700;margin-top:8px}
-
-    /* Form styles */
-    form.contact-form{display:block}
-    .field{margin-bottom:12px}
-    label{display:block;font-weight:700;margin-bottom:6px;color:var(--blue-900)}
-    input[type="text"],input[type="email"],textarea{
-      width:100%;padding:12px 14px;border-radius:10px;border:1px solid #e6edf3;background:linear-gradient(#fff,#fbfeff);font-size:0.95rem;box-sizing:border-box;transition:box-shadow .16s,transform .12s;
-    }
-    input:focus,textarea:focus{outline:none;box-shadow:0 10px 28px rgba(6,182,180,0.08);transform:translateY(-2px);border-color:var(--accent)}
-    textarea{min-height:140px;resize:vertical}
-    .btn{
-      display:inline-flex;gap:10px;align-items:center;background:linear-gradient(90deg,#0b60a0,var(--accent));color:#fff;padding:10px 16px;border-radius:10px;border:0;font-weight:800;cursor:pointer;box-shadow:0 12px 28px rgba(11,96,160,0.12);transition:transform .14s;
-    }
-    .btn:hover{transform:translateY(-4px);box-shadow:0 26px 60px rgba(6,166,164,0.14)}
-    .small{font-size:0.92rem;color:var(--muted);margin-top:10px}
-
-    /* contact cards - quick contacts */
-    .contacts-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-    .card{flex:1 1 150px;padding:10px;border-radius:10px;background:linear-gradient(180deg,#fff,#fcfeff);border:1px solid rgba(11,33,64,0.04);box-shadow:0 8px 22px rgba(2,6,23,0.04);display:flex;gap:10px;align-items:center}
-    .avatar{width:52px;height:52px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#7dd3fc);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
-    .card .info{font-weight:700;font-size:0.95rem;color:var(--blue-900)}
-
-    /* footer small */
-    footer{max-width:1100px;margin:40px auto;padding:24px;background:transparent;color:var(--muted);text-align:center}
-
-    /* responsive */
-    @media (max-width:900px){
-      nav.main{display:none}
-      #menu-toggle{display:inline-flex}
-      .hero{height:38vh}
-      .brand h1{font-size:0.98rem}
-    }
-  </style>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .hero-overlay {
+            background: rgba(8, 50, 109, 0.7);
+        }
+        .counter-item {
+            transition: all 0.5s ease;
+        }
+        .counter-item:hover {
+            transform: translateY(-5px);
+        }
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 15px rgba(210, 170, 50, 0.7);
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .core-value {
+            transition: all 0.3s ease;
+        }
+        .core-value:hover {
+            transform: translateY(-10px) rotate(5deg);
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        .core-value-icon {
+            transition: all 0.3s ease;
+        }
+        .core-value:hover .core-value-icon {
+            transform: scale(1.2);
+        }
+    </style>
 </head>
 <body>
-  <!-- header -->
-  <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300" role="banner" aria-label="Main header">
-    <div class="header-inner">
-      <div class="brand">
-        <img src="logo.jpg" alt="Katikamu SDA logo" />
-        <h1>Katikamu SDA <span style="color:#f5b90b">Secondary</span></h1>
-      </div>
-
-      <nav class="main" aria-label="Primary">
-        <a href="index.html">Home <span class="underline"></span></a>
-        <a href="aboutus.html">About <span class="underline"></span></a>
-        <a href="academics.html">Academics <span class="underline"></span></a>
-        <a href="contact.html">Facilities <span class="underline"></span></a>
-        <a href="contact.html">Sutdent life <span class="underline"></span></a>
-        <a href="contact.html">News & Events<span class="underline"></span></a>
-        <a href="contact.html">Contact <span class="underline"></span></a>
-      </nav>
-
-      <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" title="Open menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect y="4" width="24" height="2" rx="1" fill="currentColor"/><rect y="11" width="24" height="2" rx="1" fill="currentColor"/><rect y="18" width="24" height="2" rx="1" fill="currentColor"/></svg>
-      </button>
+    <!-- Announcement Bar -->
+    <div class="bg-blue-900 text-white text-center py-2 px-4">
+        <p class="text-sm md:text-base">🎓 Admissions Open for 2026! <a href="#" class="font-semibold underline ml-2">Apply Now</a></p>
     </div>
 
-    <!-- Mobile Menu -->
-    <div class="md:hidden hidden bg-white w-full py-4 px-4 shadow-lg" id="mobile-menu">
-    </div>
-  </header>
-
-  <!-- hero -->
-  <section class="hero" role="region" aria-label="Contact hero">
-    <div class="hero-inner">
-      <div class="white-board" role="article" aria-label="Contact info">
-        <h2>Contact Katikamu SDA Secondary School</h2>
-        <p>We're here to help — use the form to send a message, or contact us by email, phone or via the website.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- main contact area -->
-  <main class="wrap" id="contacts">
-    <div class="grid">
-      <!-- left -->
-      <aside class="col left" aria-labelledby="left-title">
-        <h3 id="left-title">Other ways to contact us</h3>
-        <p class="muted">Katikamu SDA Secondary School is available on most social networks. Please like our pages and follow us to keep up to date with all activities at our school.</p>
-
-        <div style="margin-top:12px">
-          <strong>Address</strong>
-          <p class="muted">P.O. BOX 53, Wobulenzi, Uganda</p>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwlP3Fb5Z1i1Cc6SBcshJH4SEo1VrbwJlLIQ&s" alt="Katikamu SDA Logo" class="h-12 mr-3">
+                <h1 class="text-xl md:text-2xl font-bold text-blue-900">Katikamu SDA <span class="text-yellow-600">Secondary</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="aboutus.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">About Us
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="academics.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Academics
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="facilities.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Facilities
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="studentlife.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">Student Life
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="news.html" class="text-gray-700 font-medium hover:text-yellow-600 transition relative group">News & Events
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="contact.html" class="text-blue-900 font-medium hover:text-yellow-600 transition relative group">Contact
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </nav>
+            
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i data-feather="menu" class="text-blue-900"></i>
+            </button>
         </div>
-
-        <div style="margin-top:12px">
-          <strong>Contact</strong>
-          <ul class="meta-list" aria-label="Contact details">
-            <li>Email: <a href="mailto:katikamusdass@gmail.com">katikamusdass@gmail.com</a></li>
-            <li>Telephone: <a href="tel:+256772481700">+256 772 481700</a></li>
-            <li>Webmail: <a href="mailto:info@katikamusdass.ac.ug">info@katikamusdass.ac.ug</a></li>
-            <li>Website: <a href="https://www.katikamusdass.ac.ug" target="_blank" rel="noopener">www.katikamusdass.ac.ug</a></li>
-          </ul>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-4 px-4 shadow-lg" id="mobile-menu">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-700 font-medium">Home</a>
+                <a href="aboutus.html" class="text-gray-700 font-medium">About Us</a>
+                <a href="academics.html" class="text-gray-700 font-medium">Academics</a>
+                <a href="facilities.html" class="text-gray-700 font-medium">Facilities</a>
+                <a href="studentlife.html" class="text-gray-700 font-medium">Student Life</a>
+                <a href="news.html" class="text-gray-700 font-medium">News & Events</a>
+                <a href="contact.html" class="text-blue-900 font-medium">Contact</a>
+            </div>
         </div>
+    </header>
 
-        <div style="margin-top:12px">
-          <strong>Open Hours</strong>
-          <p class="muted">Mo–Fr: 8:00–19:00</p>
+    <!-- Hero Section -->
+    <section class="relative h-[60vh] flex items-center justify-center bg-blue-900 overflow-hidden">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="absolute inset-0 bg-[url('https://www.katikamusdass.ac.ug/wp-content/uploads/2015/10/DSC_9037-1500x630.jpg')] bg-cover bg-center opacity-30"></div>
+        
+        <div class="container mx-auto px-4 z-10 text-center" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Contact Us</h1>
+            <p class="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                We're here to help — reach out through any channel below
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="400">
+                <a href="mailto:katikamusdass@gmail.com" class="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 btn-glow pulse flex items-center justify-center gap-2">
+                    <i data-feather="mail"></i> Email Us
+                </a>
+                <a href="tel:+256772481700" class="bg-transparent hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-6 border-2 border-white rounded-full transition duration-300 flex items-center justify-center gap-2">
+                    <i data-feather="phone"></i> Call Us
+                </a>
+            </div>
         </div>
-
-        <div class="contacts-row" aria-hidden="false">
-          <div class="card" title="Head Teacher">
-            <div class="avatar">DK</div>
-            <div class="info">Mr. Dayo Paul<br><small style="font-weight:600;color:var(--muted)">Head Teacher</small></div>
-          </div>
-          <div class="card" title="Deputy Head">
-            <div class="avatar">GN</div>
-            <div class="info">Mr. Luwemba Eddy<br><small style="font-weight:600;color:var(--muted)">Deputy</small></div>
-          </div>
-          <div class="card" title="Director of Studies">
-            <div class="avatar">SM</div>
-            <div class="info">Mr. Okurut Dan<br><small style="font-weight:600;color:var(--muted)">Director of Studies</small></div>
-          </div>
+        
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center">
+            <a href="#contact-form" class="text-white animate-bounce">
+                <i data-feather="chevron-down" class="w-8 h-8"></i>
+            </a>
         </div>
+    </section>
 
-        <div style="margin-top:12px">
-          <span class="chip">Follow us</span>
+    <!-- Contact Information -->
+    <section class="py-16 bg-white" id="contact-form">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Information -->
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold text-blue-900 mb-8">Get in Touch</h2>
+                    
+                    <div class="space-y-6">
+                        <!-- School Officials -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-semibold text-blue-900">School Officials</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <!-- Head Teacher -->
+                                <div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600">
+                                            <i data-feather="user"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-blue-900">Mr. Dayo Paul</p>
+                                            <p class="text-sm text-gray-600">Head Teacher</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Deputy Head -->
+                                <div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center text-yellow-600">
+                                            <i data-feather="user"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-blue-900">Mr. Luwemba Eddy</p>
+                                            <p class="text-sm text-gray-600">Deputy Head</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Director of Studies -->
+                                <div class="bg-gray-50 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                                            <i data-feather="book"></i>
+                                        </div>
+                                        <div>
+                                            <p class="font-semibold text-blue-900">Mr. Okurut Dan</p>
+                                            <p class="text-sm text-gray-600">Director of Studies</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Details -->
+                        <div class="space-y-4">
+                            <h3 class="text-xl font-semibold text-blue-900">Contact Details</h3>
+                            <div class="space-y-3">
+                                <p class="flex items-center gap-3 text-gray-600">
+                                    <i data-feather="map-pin" class="text-yellow-600"></i>
+                                    P.O. BOX 53, Wobulenzi, Uganda
+                                </p>
+                                <p class="flex items-center gap-3 text-gray-600">
+                                    <i data-feather="phone" class="text-yellow-600"></i>
+                                    <a href="tel:+256772481700" class="hover:text-blue-600">+256 772 481700</a>
+                                </p>
+                                <p class="flex items-center gap-3 text-gray-600">
+                                    <i data-feather="mail" class="text-yellow-600"></i>
+                                    <a href="mailto:katikamusdass@gmail.com" class="hover:text-blue-600">katikamusdass@gmail.com</a>
+                                </p>
+                                <p class="flex items-center gap-3 text-gray-600">
+                                    <i data-feather="globe" class="text-yellow-600"></i>
+                                    <a href="https://www.katikamusdass.ac.ug" target="_blank" rel="noopener" class="hover:text-blue-600">www.katikamusdass.ac.ug</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Opening Hours -->
+                        <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                            <h3 class="text-xl font-semibold text-blue-900 mb-4">Opening Hours</h3>
+                            <p class="text-gray-600">Monday – Friday: 8:00 AM – 7:00 PM</p>
+                            <p class="text-gray-600">Saturday: Closed</p>
+                            <p class="text-gray-600">Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div data-aos="fade-left">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+                        <h2 class="text-3xl font-bold text-blue-900 mb-6">Send us a Message</h2>
+                        <form id="contactForm" class="space-y-6" novalidate>
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name <span class="text-red-500">*</span></label>
+                                <input type="text" id="name" name="name" required 
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow"
+                                    placeholder="Your full name">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address <span class="text-red-500">*</span></label>
+                                <input type="email" id="email" name="email" required 
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow"
+                                    placeholder="you@example.com">
+                            </div>
+
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject <span class="text-red-500">*</span></label>
+                                <input type="text" id="subject" name="subject" required 
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow"
+                                    placeholder="What is this about?">
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message <span class="text-red-500">*</span></label>
+                                <textarea id="message" name="message" rows="4" required 
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow"
+                                    placeholder="Write your message here..."></textarea>
+                            </div>
+
+                            <div class="flex flex-wrap gap-4">
+                                <button type="submit" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-yellow-600 hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition-all duration-300 btn-glow">
+                                    <i data-feather="send" class="w-4 h-4 mr-2"></i> Send Message
+                                </button>
+                                <button type="button" id="copyEmail" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300">
+                                    <i data-feather="copy" class="w-4 h-4 mr-2"></i> Copy Email
+                                </button>
+                            </div>
+
+                            <div id="formStatus" class="hidden"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-      </aside>
+    </section>
 
-      <!-- right: form -->
-      <section class="col right" aria-labelledby="right-title">
-        <h3 id="right-title">Get in touch</h3>
-        <div style="font-weight:800;margin-bottom:8px">Send us mail</div>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-yellow-400">Katikamu SDA</h3>
+                    <p class="mb-4">Providing quality Christian education since 1968.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-feather="facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-feather="twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-feather="instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-feather="youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="academics.html" class="text-gray-400 hover:text-white transition">Academics</a></li>
+                        <li><a href="facilities.html" class="text-gray-400 hover:text-white transition">Facilities</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Admissions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">School Calendar</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Downloads</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-white transition">News & Events</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i data-feather="map-pin" class="mr-2 mt-1 w-4 h-4"></i>
+                            <span>P.O. Box 53, Wobulenzi, Uganda</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="phone" class="mr-2 w-4 h-4"></i>
+                            <span>+256 772 481700</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-feather="mail" class="mr-2 w-4 h-4"></i>
+                            <span>info@katikamusdass.ac.ug</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 text-center text-gray-400">
+                <p>&copy; 2025 Katikamu SDA Secondary School. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-        <form class="contact-form" id="contactForm" novalidate>
-          <div class="field">
-            <label for="name">Name <abbr title="required">*</abbr></label>
-            <input id="name" name="name" type="text" required placeholder="Your full name">
-          </div>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-900 text-white p-3 rounded-full shadow-lg hidden hover:bg-blue-800 transition-all duration-300">
+        <i data-feather="arrow-up"></i>
+    </button>
 
-          <div class="field">
-            <label for="email">E-Mail <abbr title="required">*</abbr></label>
-            <input id="email" name="email" type="email" required placeholder="you@example.com">
-          </div>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            once: true,
+            duration: 800,
+        });
 
-          <div class="field">
-            <label for="subject">Subject <abbr title="required">*</abbr></label>
-            <input id="subject" name="subject" type="text" required placeholder="Subject">
-          </div>
+        // Initialize Feather Icons
+        feather.replace();
 
-          <div class="field">
-            <label for="message">Message <abbr title="required">*</abbr></label>
-            <textarea id="message" name="message" required placeholder="Write your message here..."></textarea>
-          </div>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
 
-          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-            <button type="submit" class="btn" id="sendBtn">Send Message</button>
-            <button type="button" class="btn" id="copyEmail" style="background:linear-gradient(90deg,#7dd3fc,#0ea5a4)">Copy Email</button>
-            <div class="small">Or email: <a href="mailto:katikamusdass@gmail.com">katikamusdass@gmail.com</a></div>
-          </div>
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('hidden');
+            } else {
+                backToTopButton.classList.add('hidden');
+            }
+        });
 
-          <div id="formStatus" aria-live="polite" style="margin-top:12px;color:green;font-weight:700;display:none"></div>
-        </form>
-      </section>
-    </div>
-  </main>
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
 
-  <footer>
-    <small>© Katikamu SDA Secondary School</small>
-  </footer>
+        // Copy email functionality
+        document.getElementById('copyEmail').addEventListener('click', function() {
+            navigator.clipboard?.writeText('katikamusdass@gmail.com').then(function() {
+                const status = document.getElementById('formStatus');
+                status.textContent = 'Email address copied to clipboard!';
+                status.classList.remove('hidden', 'text-red-600');
+                status.classList.add('text-green-600', 'mt-4', 'font-medium');
+                setTimeout(() => status.classList.add('hidden'), 3000);
+            });
+        });
 
-  <!-- JS: menu, form handling, small UX -->
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const status = document.getElementById('formStatus');
+
+            if(!name || !email || !subject || !message) {
+                status.textContent = 'Please complete all required fields.';
+                status.classList.remove('hidden', 'text-green-600');
+                status.classList.add('text-red-600', 'mt-4', 'font-medium');
+                return;
+            }
+
+            // Prepare mailto link
+            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+            const mailto = `mailto:katikamusdass@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+            // Open mailto link
+            window.location.href = mailto;
+
+            // Show success message
+            status.textContent = 'Message prepared. Your mail app should open — you can send the message from there.';
+            status.classList.remove('hidden', 'text-red-600');
+            status.classList.add('text-green-600', 'mt-4', 'font-medium');
+
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
   <script>
-    // mobile menu toggle
+    // Initialize AOS for animations
+    AOS.init({ once: true, duration: 700 });
+
+    // feather icons
+    feather.replace();
+
+    // mobile menu toggle (progressive enhancement)
     (function(){
       var btn = document.getElementById('menu-toggle');
       var menu = document.getElementById('mobile-menu');
       if(!btn) return;
       btn.addEventListener('click', function(){
         var expanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !expanded);
+        this.setAttribute('aria-expanded', String(!expanded));
         if(!menu) return;
-        menu.style.display = expanded ? 'none' : 'block';
+        if(menu.style.display === 'block') menu.style.display = 'none'; else menu.style.display = 'block';
       });
     })();
 
     // copy primary email
     document.getElementById('copyEmail').addEventListener('click', function(){
       navigator.clipboard?.writeText('katikamusdass@gmail.com').then(function(){
-        alert('Email copied: katikamusdass@gmail.com');
+        var status = document.getElementById('formStatus');
+        status.style.display='block'; status.style.color='green'; status.textContent = 'Email copied to clipboard.';
+        setTimeout(function(){ status.style.display='none'; }, 2200);
       }, function(){ alert('Copy failed'); });
     });
 
-    // simple client-side validation + use mailto as fallback
+    // simple client-side validation + mailto fallback
     document.getElementById('contactForm').addEventListener('submit', function(e){
       e.preventDefault();
       var name = document.getElementById('name').value.trim();
